@@ -6,7 +6,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/seofood/sound-sentinel/internal/app"
+	"sound-sentinel/internal/app"
 )
 
 func main() {

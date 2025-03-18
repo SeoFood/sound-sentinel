@@ -1,10 +1,8 @@
-module github.com/seofood/sound-sentinel
+module sound-sentinel
 
 go 1.18
 
-require (
-	github.com/eclipse/paho.mqtt.golang v1.4.2
-)
+require github.com/eclipse/paho.mqtt.golang v1.4.2
 
 require (
 	github.com/gorilla/websocket v1.5.0 // indirect
