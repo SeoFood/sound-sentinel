@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "golang.go",
+        "ms-vscode.go-extensions",
+        "golangci.golangci-lint",
+        "hollowtree.golangci-lint",
+        "davidanson.vscode-markdownlint"
+    ]
+}

@@ -1,0 +1,12 @@
+{
+  "go.formatTool": "gofmt",
+  "go.lintTool": "golint",
+  "go.useLanguageServer": true,
+  "go.languageServerFlags": ["-rpc.trace"],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "go.autocompleteUnimportedPackages": true,
+  "go.useGoProxyToCheckForToolUpdates": true
+}

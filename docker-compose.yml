@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  sound-sentinel:
+    container_name: sound-sentinel
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      - AUDIO_SOURCE=${AUDIO_SOURCE}
+      - SOUND_THRESHOLD=${SOUND_THRESHOLD}
+      - DETECTION_TIMEOUT=${DETECTION_TIMEOUT}
+      - MQTT_BROKER=${MQTT_BROKER}
+      - MQTT_TOPIC=${MQTT_TOPIC}
+      - MQTT_USERNAME=${MQTT_USERNAME}
+      - MQTT_PASSWORD=${MQTT_PASSWORD}
+      - MQTT_CLIENT_ID=${MQTT_CLIENT_ID}
+    devices:
+      - "${AUDIO_DEVICE:-/dev/snd:/dev/snd}"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
