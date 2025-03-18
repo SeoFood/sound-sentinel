@@ -7,10 +7,17 @@ import (
 	"syscall"
 
 	"sound-sentinel/internal/app"
+
+	"github.com/joho/godotenv"
 )
 
 func main() {
 	log.Println("Starting Sound Sentinel...")
+
+	// Lade .env Datei
+	if err := godotenv.Load(); err != nil {
+		log.Println("No .env file found, using environment variables")
+	}
 
 	detector, err := app.NewSoundDetector()
 	if err != nil {

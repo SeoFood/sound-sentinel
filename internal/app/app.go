@@ -11,6 +11,7 @@ import (
 	"time"
 
 	mqtt "github.com/eclipse/paho.mqtt.golang"
+	"github.com/joho/godotenv"
 )
 
 // SoundDetector represents the main application
@@ -30,6 +31,9 @@ type SoundDetector struct {
 
 // NewSoundDetector creates a new instance of SoundDetector
 func NewSoundDetector() (*SoundDetector, error) {
+	// Lade .env Datei (ignoriere Fehler, wenn die Datei nicht existiert)
+	_ = godotenv.Load()
+
 	threshold, err := strconv.ParseFloat(getEnv("SOUND_THRESHOLD", "0.03"), 64)
 	if err != nil {
 		return nil, fmt.Errorf("Invalid SOUND_THRESHOLD: %v", err)
